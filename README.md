@@ -14,13 +14,17 @@ but is disabled during the memorytest ...
 Nevermind, I wanted something to test the memory, and give me more detailed reports on what happens, so here it is: Memorytest 2021!
 
 ## Running
+### Requirements
 
-To run this on a Commodore 64, it must be able to boot and load from disk or tape. 
+To run this on a Commodore 64, it must be able to boot and load from disk or tape.
+
+If the machine can run Deadtest without any major issues, you can run this program - Deadtest tests the first 4kB, that this program requires to run!
 
 You don't need to compile or assemble the code, you can use either the .d64 diskimage or the single .prg file directly from the releases folder.
 
-Load the memorytest 2021 program as a normal basic-program, and run it. It is a machine-code program residing from $0820 to roughly $0fc0. Meaning that if there are 
-memory-errors in that area, the program will probably fail!
+### How to
+
+Load the memorytest 2021 program as a normal basic-program, and run it.
 
 The program will test addresses from $1000 to $FFFF by writing various bit-patterns into every single address, waiting for about a thousand clock-cycles, and reading
 the values back to see if they are unchanged.
