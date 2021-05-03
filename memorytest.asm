@@ -1,3 +1,6 @@
+          *=$0801
+          BasicUpstart(start-1)
+
           *= $0820
             sei
 start:      lda #$02
@@ -41,13 +44,13 @@ clrchips:   sta badchips,x
             cpx #$08
             bne clrchips
             //Set ram-area to be tested
-            lda #<$3000
-            sta $04     //04-05 = FROM
-            lda #>$3000
+            lda #<$1000
+            sta $04     //04-05 = FROM $1000
+            lda #>$1000
             sta $05
-            lda #<$7000 //TODO change to 0
-            sta $06     //06-07 = TO
-            lda #>$7000
+            lda #<$0000 //
+            sta $06     //06-07 = TO $0000 (all the way through $ffff)
+            lda #>$0000
             sta $07
             lda #$ff    //pattern FF
             sta $08
